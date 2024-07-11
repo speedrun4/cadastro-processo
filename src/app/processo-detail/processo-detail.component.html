@@ -1,0 +1,8 @@
+<div *ngIf="processo">
+  <h2>{{ processo.npu }}</h2>
+  <p>Data de Cadastro: {{ processo.dataCadastro }}</p>
+  <p>Data de Visualização: {{ processo.dataVisualizacao }}</p>
+  <p>Município: {{ processo.municipio }}</p>
+  <p>UF: {{ processo.uf }}</p>
+  <p>Documento: <a [href]="processo.documento" target="_blank">Ver Documento</a></p>
+</div>

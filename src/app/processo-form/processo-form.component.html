@@ -1,0 +1,27 @@
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="npu">NPU:</label>
+    <input id="npu" name="npu" [(ngModel)]="processo.npu" required>
+  </div>
+  <div>
+    <label for="dataCadastro">Data de Cadastro:</label>
+    <input id="dataCadastro" name="dataCadastro" [(ngModel)]="processo.dataCadastro" type="date" required>
+  </div>
+  <div>
+    <label for="uf">UF:</label>
+    <select id="uf" name="uf" [(ngModel)]="processo.uf" (change)="onUfChange($event)" required>
+      <option *ngFor="let estado of estados" [value]="estado.sigla">{{ estado.nome }}</option>
+    </select>
+  </div>
+  <div>
+    <label for="municipio">Município:</label>
+    <select id="municipio" name="municipio" [(ngModel)]="processo.municipio" required>
+      <option *ngFor="let municipio of municipios" [value]="municipio.nome">{{ municipio.nome }}</option>
+    </select>
+  </div>
+  <div>
+    <label for="documento">Documento (PDF):</label>
+    <input id="documento" name="documento" type="file" (change)="onFileChange($event)" required>
+  </div>
+  <button type="submit">Cadastrar Processo</button>
+</form>

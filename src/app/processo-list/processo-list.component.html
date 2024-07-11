@@ -1,0 +1,5 @@
+<div *ngFor="let processo of processos">
+  <div (click)="selectProcesso(processo)">
+    {{ processo.npu }} - {{ processo.dataCadastro }} - {{ processo.uf }}
+  </div>
+</div>
